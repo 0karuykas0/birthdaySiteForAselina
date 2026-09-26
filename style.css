@@ -1,0 +1,182 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Pacifico", cursive;
+    background: #ffd6e7;
+}
+
+h1 {
+    color: #ffffff;
+    -webkit-text-stroke: 1px #7a1745;
+    font-size: 40px;
+    margin-bottom: 35px;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 12px;
+
+
+
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-family: "Pacifico", cursive;
+}
+
+button {
+    border: none;
+    padding: 15px 30px;
+    border-radius: 12px;
+
+    font-size: 20px;
+    cursor: pointer;
+
+    transition: 0.25s;
+}
+
+#yes {
+    background: #ff75a8;
+    color: white;
+    font-family: "Pacifico", cursive;
+
+}
+
+#yes:hover {
+    animation: shake 1s ease-in-out infinite;
+}
+
+@keyframes shake {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+    }
+    25% {
+        transform: scale(1.1) rotate(3deg);
+    }
+    50% {
+        transform: scale(1.1) rotate(-3deg);
+    }
+}
+
+
+
+#no {
+    background: #ffffff;
+    color: #000000;
+
+    font-family: "Pacifico", cursive;
+}
+
+#birthday {
+    position: fixed;
+    inset: 0;
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.5s;
+
+
+}
+
+#birthday h2 {
+    font-size: 60px;
+    color: white;
+    text-align: center;
+
+    -webkit-text-stroke: 2px #ff4f91;
+
+    animation: birthday 1s ease-in-out infinite;
+}
+
+@keyframes birthday {
+    0%, 100% {
+        transform: scale(1) rotate(-2deg);
+    }
+
+    50% {
+        transform: scale(1.1) rotate(2deg);
+    }
+}
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+
+    top: 50%;
+    left: 50%;
+
+    pointer-events: none;
+
+    animation: fly 1.5s ease-out forwards;
+}
+
+@keyframes fly {
+    to {
+        transform: translate(var(--x), var(--y)) rotate(720deg);
+        opacity: 0;
+    }
+
+}
+
+#message {
+    opacity: 0.2;
+    color: darkmagenta;
+    text-align: center;
+
+}
+#exmessage {
+    white-space: pre-line;
+    opacity: 0.2;
+    color: darkmagenta;
+    text-align: center;
+
+}
+#message.show {
+    animation: birthdayText 0.2s ease-out forwards;
+}
+#exmessage.show {
+    animation: ExbirthdayText 0.2s ease-out forwards;
+}
+
+@keyframes birthdayText {
+    0% {
+        font-size: 70px;
+    }
+    20% {
+        opacity: 0.2;
+    }
+    100% {
+        font-size: 40px;
+        opacity: 1;
+    }
+
+}
+@keyframes ExbirthdayText {
+    0% {
+        opacity: 0;
+        font-size: 40px;
+    }
+    100% {
+        font-size: 30px;
+        opacity: 1;
+    }
+
+}
+
